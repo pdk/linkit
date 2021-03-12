@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Hawaii #photography links</title>
+
+</head>
+<body>
+
+<main role="main" class="container">
+
+    {{ range .SuccessMessages }}
+        <div class="alert alert-success" role="alert">
+            {{ . }}
+        </div>
+    {{ end }}
+
+    <h1>Hawaii #photography links</h1>
+
+    <p>
+        This is a list of links for 
+        <a href="https://hawaii.slack.com/archives/CJDLL15QB" target="_blank">the Hawaii #photography slack channel</a>.
+    </p>
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Link</th>
+                <th scope="col">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {{ range .Links }}
+            <tr>
+                <td> {{ .Name }} </td>
+                <td> <a href="{{ .URL }}" target="_blank">{{ .URL }}</a> </td>
+                <td> {{ .Notes }} </td>
+            </tr>
+        {{ end }}
+
+        </tbody>
+    </table>
+
+
+    <h2>Add a Link</h2>
+
+    <form>
+
+        <div class="mb-3 col-sm-5">
+            <label for="passcode" class="form-label">Passcode</label>
+            <input type="password" required class="form-control" id="passcode" aria-describedby="passcodeHelp">
+            <small id="passcodeHelp" class="form-text text-muted">What's the passcode? Don't have it? Go to 
+                <a href="https://hawaii.slack.com/archives/CJDLL15QB" target="_blank">#photography</a>
+                to get it.
+            </small>
+        </div>
+
+        <div class="mb-3 col-sm-10">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" required maxlength="100" class="form-control" id="name" aria-describedby="nameHelp">
+            <small id="nameHelp" class="form-text text-muted">How are you called on the interwebs? (max 100 chars)</small>
+        </div>
+
+        <div class="mb-3 col-sm-10">
+            <label for="url" class="form-label">URL / Link</label>
+            <input type="url" class="form-control" id="url" aria-describedby="urlHelp">
+            <small id="urlHelp" class="form-text text-muted">What's your web address? (don't forget the HTTPS://)</small>
+        </div>
+
+        <div class="mb-3 col-sm-10">
+            <label for="notes" class="form-label">Notes</label>
+            <input type="text" maxlength="100" class="form-control" id="notes" aria-describedby="notesHelp">
+            <small id="notesHelp" class="form-text text-muted">What's your shtick? (max 100 chars)</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" 
+    crossorigin="anonymous"></script>
+
+</body>
+</html>
