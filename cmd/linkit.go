@@ -83,8 +83,8 @@ func run(args []string, stdout io.Writer) error {
 	r.HandleFunc("/{urlStub}", server.HandleStub)
 	r.PathPrefix("/").HandlerFunc(server.YouAreLost)
 
-	log.Printf("listening on 8888")
-	err = http.ListenAndServe(":8888", r)
+	log.Printf("listening on 6789")
+	err = http.ListenAndServe(":6789", r)
 	if err != nil {
 		log.Printf("%v", err)
 	}
