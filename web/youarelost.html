@@ -7,25 +7,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/site.css?{{ .GitCommitHash }}">
+    <link rel="stylesheet" href="/css/site.css">
 
-    <title>links.hawaiislack.com/title>
+    <title>links.hawaiislack.com</title>
 
 </head>
 <body>
 
 <main role="main" class="container">
 
-    {{ range .SuccessMessages }}
-        <div class="alert alert-success" role="alert">
-            {{ . }}
-        </div>
-    {{ end }}
-
     <h1>feeling lost?</h1>
 
     <p>
-        <a href="/foto">photog links</a> <br>
+        <a href="/foto">photog links</a> <br />
         <a href="/socia">social media links</a>
     </p>
 
